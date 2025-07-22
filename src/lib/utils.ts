@@ -1,4 +1,3 @@
-// utils.ts
 export function calculateDuration(from: string, to: string): string {
   const fromTime = new Date(from).getTime();
   const toTime = new Date(to).getTime();

@@ -39,7 +39,6 @@ const updateOrder = (id: string, changes: Partial<Order>) => {
       ...changes,
     };
 
-    // Only recalculate duration and deductions
     const duration = calculateDuration(updatedOrder.fromdate, updatedOrder.todate);
     const deductions = calculateDeduction(duration, updatedOrder.percent);
 
@@ -62,7 +61,7 @@ const updateOrder = (id: string, changes: Partial<Order>) => {
       duration,
       deductions,
       needsReorder,
-      todate: order.todate, // ✅ Lock todate forever
+      todate: order.todate,
     };
   });
 };

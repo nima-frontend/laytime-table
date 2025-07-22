@@ -10,10 +10,8 @@ import "@/styles/global.css";
 export default function CountriesPage() {
   const [selectedCountry, setSelectedCountry] = useState<Country | null>(null);
 
-  // Initialize countryOrders with mock data for "c1"
   const [countryOrders, setCountryOrders] = useState<Record<string, Order[]>>(mockOrders);
 
-  // Handler to update orders for a specific country
   const handleOrderChange = (countryId: string, updated: Order[]) => {
     setCountryOrders((prev) => ({
       ...prev,
