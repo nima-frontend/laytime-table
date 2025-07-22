@@ -5,7 +5,7 @@
 ## Click the Link for Demo ⇩
 
 <a href="https://laytime-table-ivory.vercel.app/" target="_blank">
-  <img src="https://img.shields.io/badge/Demo%20Project-Visit-pink?style=for-the-badge&logo=vercel" alt="Demo Project" />
+  <img src="https://img.shields.io/badge/Demo%20Project-Visit-9cf?style=for-the-badge&logo=vercel" alt="Demo Project" />
 </a>
 
 ## Overview
