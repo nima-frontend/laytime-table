@@ -34,15 +34,22 @@ const updateOrder = (id: string, changes: Partial<Order>) => {
   return orders.map(order => {
     if (order.id !== id) return order;
 
-    const updatedOrder = {
+    let updatedOrder = {
       ...order,
       ...changes,
     };
+
+    if (changes.fromdate && new Date(changes.fromdate) > new Date(order.todate)) {
+      updatedOrder.todate = changes.fromdate; 
+    } else {
+      updatedOrder.todate = order.todate; 
+    }
 
     const duration = calculateDuration(updatedOrder.fromdate, updatedOrder.todate);
     const deductions = calculateDeduction(duration, updatedOrder.percent);
 
     let needsReorder = order.needsReorder;
+
 
     if (changes.fromdate) {
       const updatedOrders = orders.map(o =>
@@ -61,7 +68,6 @@ const updateOrder = (id: string, changes: Partial<Order>) => {
       duration,
       deductions,
       needsReorder,
-      todate: order.todate,
     };
   });
 };
